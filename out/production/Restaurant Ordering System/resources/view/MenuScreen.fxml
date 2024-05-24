@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<VBox prefHeight="396.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.MenuScreenController">
+   <children>
+      <VBox fx:id="orderingVBox" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+         <children>
+              <HBox>
+                  <children>
+                      <Label styleClass="header-text" text="02">
+                     <HBox.margin>
+                        <Insets right="6.0" />
+                     </HBox.margin></Label>
+                      <Label maxWidth="1.7976931348623157E308" styleClass="header-text" text="CHOOSE MEAL" HBox.hgrow="ALWAYS" />
+                  </children>
+               <VBox.margin>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </VBox.margin>
+              </HBox>
+            <VBox fx:id="chooseMealVBox" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button fx:id="prevCustomerBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#prevCustomerBtnPressed" text="&lt;" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="currentDinerLabel" text="Meal (X of X)">
+                           <HBox.margin>
+                              <Insets left="6.0" right="6.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Button fx:id="nextCustomerBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#nextCustomerBtnPressed" text="&gt;" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets left="6.0" right="6.0" />
+                     </padding>
+                  </HBox>
+                  <HBox maxHeight="1.7976931348623157E308" styleClass="main-content-wide" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox spacing="3.0">
+                                 <children>
+                                    <Button fx:id="starterBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#starterBtnPressed" styleClass="tab-btn" text="STARTERS" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="mainBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#mainBtnPressed" styleClass="tab-btn" text="MAINS" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="dessertBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#dessertBtnPressed" styleClass="tab-btn" text="DESSERTS" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="drinkBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#drinkBtnPressed" styleClass="tab-btn" text="DRINKS" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <ScrollPane fitToHeight="true" fitToWidth="true" styleClass="border-less-scroll-pane" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <HBox fx:id="menuHBox" styleClass="scroll-pane-vbox" />
+                                 </content>
+                                 <VBox.margin>
+                                    <Insets left="6.0" right="6.0" />
+                                 </VBox.margin>
+                              </ScrollPane>
+                              <HBox fx:id="menuToolsHBox" alignment="TOP_RIGHT" spacing="6.0">
+                                 <children>
+                                    <Button fx:id="sortBtn" mnemonicParsing="false" onAction="#sortBtnPressed" styleClass="tab-btn" text="Sort" />
+                                    <Button fx:id="filterBtn" mnemonicParsing="false" onAction="#filterBtnPressed" styleClass="tab-btn" text="Filter" />
+                                    <Button fx:id="randomBtn" mnemonicParsing="false" onAction="#randomBtnPressed" styleClass="tab-btn" text="Random" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="6.0" top="6.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox fx:id="filtersHBox" visible="false">
+                                 <children>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <HBox spacing="12.0" styleClass="pop-up-box">
+                                       <children>
+                                          <CheckBox fx:id="vegetarianCheckBox" mnemonicParsing="false" onAction="#vegetarianCheckBoxPressed" text="Vegetarian" />
+                                          <CheckBox fx:id="glutenFreeCheckBox" mnemonicParsing="false" onAction="#glutenFreeCheckBoxPressed" text="Gluten Free" />
+                                          <CheckBox fx:id="dairyFreeCheckBox" mnemonicParsing="false" onAction="#dairyFreeCheckBoxPressed" text="Dairy Free" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="sortHBox" visible="false">
+                                 <children>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <HBox alignment="CENTER_LEFT" styleClass="pop-up-box">
+                                       <children>
+                                          <Label text="Sort by:" />
+                                          <ChoiceBox fx:id="sortByComboBox" styleClass="combo-box-thinner">
+                                             <HBox.margin>
+                                                <Insets left="3.0" right="10.0" />
+                                             </HBox.margin></ChoiceBox>
+                                          <Label text="Order:" />
+                                          <ChoiceBox fx:id="orderByComboBox" styleClass="combo-box-thinner">
+                                             <HBox.margin>
+                                                <Insets left="3.0" />
+                                             </HBox.margin></ChoiceBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="12.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox minWidth="250.0">
+                           <children>
+                              <Label text="Order" />
+                              <TableView fx:id="orderTableView" styleClass="order-table-view" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="itemColumn" prefWidth="75.0" styleClass="order-table-column" text="Item" />
+                                  <TableColumn fx:id="caloriesColumn" prefWidth="75.0" styleClass="order-table-column" text="Calories" />
+                                    <TableColumn fx:id="priceColumn" prefWidth="75.0" styleClass="order-table-column" text="Price" />
+                                </columns>
+                              </TableView>
+                              <HBox alignment="BOTTOM_RIGHT" maxWidth="1.7976931348623157E308">
+                                 <children>
+                                    <VBox HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <HBox maxWidth="1.7976931348623157E308">
+                                             <children>
+                                                <Label text="Total" />
+                                                <Region maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <Line endX="148.0" startX="-100.0" styleClass="total-line" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <VBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label fx:id="totalCaloriesLabel" styleClass="item-calories-text" />
+                                    <Label fx:id="totalCostLabel" styleClass="item-price-text" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="6.0" top="6.0" />
+                     </VBox.margin>
+                  </HBox>
+                    <HBox alignment="CENTER_RIGHT" styleClass="deck-bar-hbox">
+                        <children>
+                            <Button fx:id="backBtn" mnemonicParsing="false" onAction="#backPressed" styleClass="deck-bar-btn" text="Back" />
+                        <Region layoutX="99.0" layoutY="17.0" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="errorLabel" styleClass="error-text" HBox.hgrow="ALWAYS" />
+                        <Region HBox.hgrow="ALWAYS" />
+                            <Button fx:id="submitBtn" mnemonicParsing="false" onAction="#submitBtnPressed" styleClass="deck-bar-btn" text="Submit" />
+                        </children>
+                     <VBox.margin>
+                        <Insets bottom="6.0" left="6.0" right="6.0" />
+                     </VBox.margin>
+                    </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

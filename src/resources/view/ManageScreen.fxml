@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="396.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.ManageScreenController">
+   <children>
+      <HBox>
+         <children>
+            <Label maxWidth="1.7976931348623157E308" styleClass="header-text" text="MANAGE" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+               </HBox.margin></Label>
+         </children>
+      </HBox>
+      <HBox maxWidth="1.7976931348623157E308" spacing="6.0">
+         <children>
+            <Button fx:id="editMenuNavBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#editMenuNavBtnPressed" styleClass="tab-btn" text="Edit Menu" HBox.hgrow="ALWAYS" />
+            <Button fx:id="appearanceNavBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#appearanceNavBtnPressed" styleClass="tab-btn" text="Appearance" HBox.hgrow="ALWAYS" />
+            <Button fx:id="statsNavBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#statsNavBtnPressed" styleClass="tab-btn" text="Stats" HBox.hgrow="ALWAYS" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="6.0" left="6.0" right="6.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox fx:id="manageMainVBox" styleClass="main-content-wide" visible="false" HBox.hgrow="ALWAYS">
+               <children>
+                  <VBox fx:id="editMenuVBox" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="tab-header" text="Edit Menu" />
+                           </children>
+                        </HBox>
+                        <ScrollPane fx:id="menuItemsScrollPane" fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" styleClass="border-less-scroll-pane">
+                           <content>
+                              <VBox fx:id="itemsVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="scroll-pane-vbox">
+                                 <padding>
+                                    <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                 </padding></VBox>
+                           </content>
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </ScrollPane>
+                        <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Button fx:id="addItemBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addItemBtnPressed" styleClass="main-content-btn" text="Add New Item">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="appearanceVBox" visible="false" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="tab-header" text="Appearance">
+                                 <HBox.margin>
+                                    <Insets bottom="16.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Label text="Choose theme:" />
+                        <ChoiceBox fx:id="chooseThemeChoiceBox" prefWidth="150.0" />
+                     </children></VBox>
+                  <VBox fx:id="statsVBox" visible="false" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label styleClass="tab-header" text="Statistics on Restaurant Orders">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox fx:id="statsContentHBox" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox fx:id="statisticsLeftVBox" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label styleClass="tab-sub-header" text="Order Quantity Stats">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin></Label>
+                                    <HBox fx:id="orderQuantityContentHBox" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <VBox fx:id="orderQuantityContentVBox" maxHeight="1.7976931348623157E308">
+                                             <children>
+                                                <VBox>
+                                                   <children>
+                                                      <Label fx:id="totalOrderNumberLabel" text="Total Number of Orders: " />
+                                                      <Label fx:id="totalItemNumberLabel" text="Total Number of Items Ordered" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="5.0" />
+                                                   </padding>
+                                                </VBox>
+                                                <VBox>
+                                                   <children>
+                                                      <Label fx:id="starterTotalItemLabel" text="Starters" />
+                                                      <Label fx:id="mainsTotalItemLabel" text="Mains" />
+                                                      <Label fx:id="dessertTotalItemLabel" text="Dessert" />
+                                                      <Label fx:id="drinkTotalItemLabel" text="Drinks" />
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="5.0" />
+                                                   </padding>
+                                                </VBox>
+                                                <VBox fx:id="chartTableVBox" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
+                                             </children>
+                                          </VBox>
+                                          <VBox fx:id="chartVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox styleClass="border-left, standard-padding">
+                                 <children>
+                                    <Label styleClass="tab-sub-header" text="Order Price Stats">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin></Label>
+                                    <VBox>
+                                       <children>
+                                          <Label fx:id="totalCostNumberLabel" text="Total Cost of Items Bought" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                    <VBox>
+                                       <children>
+                                          <Label fx:id="starterTotalCostLabel" text="Starters" />
+                                          <Label fx:id="mainsTotalCostLabel" text="Mains" />
+                                          <Label fx:id="dessertTotalCostLabel" text="Dessert" />
+                                          <Label fx:id="drinkTotalCostLabel" text="Drinks" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="6.0" top="6.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Label fx:id="noOrdersLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="No Orders have been Made" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox styleClass="deck-bar-hbox">
+         <children>
+            <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#closeBtnPressed" styleClass="deck-bar-btn" text="Back" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="errorLabel" text="Error! " />
+            <Region HBox.hgrow="ALWAYS" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

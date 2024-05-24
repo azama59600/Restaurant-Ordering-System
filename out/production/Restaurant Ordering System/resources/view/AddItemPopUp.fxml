@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefWidth="313.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.AddItemPopUpController">
+   <children>
+      <HBox>
+         <children>
+            <Label maxWidth="1.7976931348623157E308" styleClass="header-text-sub-win" text="ADD ITEM" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Label>
+         </children>
+         <VBox.margin>
+            <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+         </VBox.margin>
+      </HBox>
+      <VBox styleClass="main-content-wide-sub-win" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox>
+               <children>
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="ID" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="idTextField" alignment="CENTER_RIGHT" prefWidth="60.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" top="1.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label maxHeight="1.7976931348623157E308" text="Item Name" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="nameTextField" alignment="CENTER_RIGHT" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" top="1.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label maxHeight="1.7976931348623157E308" text="Price (£)" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="priceTextField" alignment="CENTER_RIGHT" prefWidth="60.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" top="1.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label maxHeight="1.7976931348623157E308" text="Calories (Cal)" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="caloriesTextField" alignment="CENTER_RIGHT" prefWidth="60.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" top="1.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox>
+               <children>
+                  <HBox>
+                     <children>
+                        <Label maxWidth="1.7976931348623157E308" text="Description" HBox.hgrow="ALWAYS" />
+                        <Region maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="descriptionTextField" prefHeight="70.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" top="1.0" />
+               </VBox.margin>
+            </VBox>
+            <HBox>
+               <children>
+                  <VBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Course" />
+                        <CheckBox fx:id="starterCheckBox" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#starterCheckBoxPressed" text="Starter">
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin></CheckBox>
+                        <CheckBox fx:id="mainCheckBox" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#mainCheckBoxPressed" text="Main">
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin></CheckBox>
+                        <CheckBox fx:id="dessertCheckBox" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#dessertCheckBoxPressed" text="Dessert">
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin></CheckBox>
+                        <CheckBox fx:id="drinkCheckBox" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#drinkCheckBoxPressed" text="Drink">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></CheckBox>
+                     </children>
+                  </VBox>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <VBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Attributes" />
+                        <CheckBox fx:id="vegetarianCheckBox" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Vegetarian">
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin></CheckBox>
+                        <CheckBox fx:id="glutenFreeCheckBox" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Gluten Free">
+                           <VBox.margin>
+                              <Insets bottom="1.0" />
+                           </VBox.margin></CheckBox>
+                        <CheckBox fx:id="dairyFreeCheckBox" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Dairy Free">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></CheckBox>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" top="1.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label maxHeight="1.7976931348623157E308" text="Image Location" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="imageTextField" alignment="CENTER_RIGHT" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" top="1.0" />
+               </VBox.margin>
+            </HBox>
+         </children></VBox>
+      <HBox alignment="CENTER" styleClass="deck-bar-hbox" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancelBtnPressed" styleClass="deck-bar-btn" text="Cancel" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="errorLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" styleClass="error-text" textAlignment="CENTER" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="addBtn" mnemonicParsing="false" onAction="#addBtnPressed" styleClass="deck-bar-btn" text="Add" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
